@@ -187,7 +187,57 @@ section { scroll-margin-top: 200px; margin-bottom: 3rem; }
     background-color: #ffffff;
     border: 2px solid #000;
   }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+      padding: 0 1rem;
+    }
+
+    #kidpix-button, #clear-kidpix-button {
+      padding: 4px 6px;
+      font-size: 11px;
+    }
+
+    #kidpix-button {
+      bottom: 60px;
+      top: auto;
+    }
+
+    #clear-kidpix-button {
+      bottom: 20px;
+      top: auto;
+    }
+  }
+
+  #kidpix-button, #clear-kidpix-button {
+    position: fixed;
+    right: 15px;
+    z-index: 1000;
+    padding: 5px 8px;
+    font-family: Comic Sans MS, cursive;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #000;
+    max-width: 120px;
+    white-space: nowrap;
+  }
+
+  #kidpix-button {
+    top: 20px;
+    bottom: auto;
+    background-color: #ffcc00;
+    border: 2px solid #000;
+  }
+
+  #clear-kidpix-button {
+    top: 60px;
+    bottom: auto;
+    background-color: #ffffff;
+    border: 2px solid #000;
+  }
 </style>
+
 
 
 
