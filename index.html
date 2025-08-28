@@ -5,61 +5,88 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Yağmur Deniz Kısa</title>
 <style>
+    /* Prevent width+padding overflow and odd cutoffs */
+    *, *::before, *::after { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
       background: #f4f4f4;
       color: #333;
+      padding-top: 120px; /* space for fixed header */
+      overflow-x: hidden; /* no horizontal cutoffs */
     }
+
     header {
       background: #fff;
       padding: 2rem;
       border-bottom: 5px solid #eb4034;
-        display: flex;
-        flex-direction: column;
-      align-items: center; /* centers h1 horizontally */
       text-align: center;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
+    /* Center header contents within same width as main */
+    .header-inner {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     h1 {
       margin: 0;
       font-size: 2.5rem;
       color: #1e1e1e;
+      text-align: center;
+      width: 100%;
     }
+
     h2 {
       color: #eb4034;
       margin-top: 2rem;
     }
+
     nav {
-      text-align: center;
       margin-top: 1rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 36px; /* desktop spacing */
+      width: 100%;
     }
+
     nav a {
       text-decoration: none;
       font-weight: bold;
       color: #007acc;
-      font-size: 16px; /* keep font consistent */
+      font-size: 16px; /* keep font consistent and readable */
     }
+
     main {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     section {
       margin-bottom: 3rem;
     }
+
     .publication {
       margin-bottom: 2rem;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
       background: #fff;
       border-top: 3px solid #eb4034;
     }
+
     .miro-bg {
       position: fixed;
       top: 0; left: 0;
@@ -72,12 +99,12 @@
         radial-gradient(circle at 70% 70%, #1e1e1e 20px, transparent 21px);
       background-repeat: no-repeat;
     }
+
     a {
       color: #eb4034;
     }
-  
-    body { padding-top: 120px; }
-    section { scroll-margin-top: 200px; margin-bottom: 3rem; }
+
+    section { scroll-margin-top: 200px; }
 
     @media (max-width: 600px) {
       h1 {
@@ -93,20 +120,26 @@
       nav a {
         font-size: 16px; /* keep readable size on mobile */
       }
+      body { padding-top: 110px; } /* header slightly shorter on mobile */
     }
 </style>
 </head>
 <body>
 <div class="miro-bg"></div>
+
+<!-- Keep the fixed positioning inline so your site behavior is unchanged -->
 <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <h1>Yağmur Deniz Kısa</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#publications">Publications</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <div class="header-inner">
+    <h1>Yağmur Deniz Kısa</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
+
 <main>
   <section id="about" style="line-height: 1.8em; margin-bottom: 3rem;">
     <h2>About</h2>
